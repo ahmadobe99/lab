@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:lab/home.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -18,9 +19,7 @@ class _LoginState extends State<Login> {
       appBar: AppBar(),
       body: Column(
         children: [
-          // Divider(
-          //   height: 50,
-          // ),
+   
           Container(
             width: 100,
             height: 100,
@@ -77,12 +76,13 @@ class _LoginState extends State<Login> {
                   UserCredential myUser =
                       await authopject.signInWithEmailAndPassword(
                           email: email.text, password: password.text);
-                  ScaffoldMessenger.of(context).showSnackBar(
+                  if (myUser !=null){ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text(" sucessfully log in")));
+
                   Navigator.push(context,
                       MaterialPageRoute(builder: ((context) {
                     return Home();
-                  })));
+                  })));}
                 } catch (e) {
                   ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text("wrong log in")));

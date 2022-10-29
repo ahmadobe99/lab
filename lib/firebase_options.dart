@@ -44,39 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBRf2c4HKsMtT3xi2vUa5hE037P-3XjZO0',
-    appId: '1:230453938887:web:704b602200fe7c36904ce2',
-    messagingSenderId: '230453938887',
-    projectId: 'aghaobeidat-fa2b5',
-    authDomain: 'aghaobeidat-fa2b5.firebaseapp.com',
-    storageBucket: 'aghaobeidat-fa2b5.appspot.com',
+    apiKey: 'AIzaSyC0Ndx_TvqDloVFkrpnvrmBMwnymox0Mdo',
+    appId: '1:472313211101:web:6b3c26f9e3d85c17de5334',
+    messagingSenderId: '472313211101',
+    projectId: 'vibe-9a579',
+    authDomain: 'vibe-9a579.firebaseapp.com',
+    storageBucket: 'vibe-9a579.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDHr2PaVIBnFeQwABe_Hf_tLxpXRH0Caho',
-    appId: '1:230453938887:android:fa15c85c2d7f1abb904ce2',
-    messagingSenderId: '230453938887',
-    projectId: 'aghaobeidat-fa2b5',
-    storageBucket: 'aghaobeidat-fa2b5.appspot.com',
+    apiKey: 'AIzaSyBzfaMV_sUAZHCqCF8ZNr8rqvTu37suyoU',
+    appId: '1:472313211101:android:7792871d9d8d045fde5334',
+    messagingSenderId: '472313211101',
+    projectId: 'vibe-9a579',
+    storageBucket: 'vibe-9a579.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDmlNAAoMAGlCdmHkQZjiQTD3UKKrMtqlk',
-    appId: '1:230453938887:ios:712101a539891ed2904ce2',
-    messagingSenderId: '230453938887',
-    projectId: 'aghaobeidat-fa2b5',
-    storageBucket: 'aghaobeidat-fa2b5.appspot.com',
-    iosClientId: '230453938887-rgg91pd9s7qjb5e5qb96sco8vd66625n.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBckeVx34Qb-L_lZt2DAQtenvhfCNQUIac',
+    appId: '1:472313211101:ios:cd158c7f3ffe8f2bde5334',
+    messagingSenderId: '472313211101',
+    projectId: 'vibe-9a579',
+    storageBucket: 'vibe-9a579.appspot.com',
+    iosClientId: '472313211101-o8d3rk5de6f0hlni66bjmfb39a1oapfm.apps.googleusercontent.com',
     iosBundleId: 'com.example.lab',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDmlNAAoMAGlCdmHkQZjiQTD3UKKrMtqlk',
-    appId: '1:230453938887:ios:712101a539891ed2904ce2',
-    messagingSenderId: '230453938887',
-    projectId: 'aghaobeidat-fa2b5',
-    storageBucket: 'aghaobeidat-fa2b5.appspot.com',
-    iosClientId: '230453938887-rgg91pd9s7qjb5e5qb96sco8vd66625n.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBckeVx34Qb-L_lZt2DAQtenvhfCNQUIac',
+    appId: '1:472313211101:ios:cd158c7f3ffe8f2bde5334',
+    messagingSenderId: '472313211101',
+    projectId: 'vibe-9a579',
+    storageBucket: 'vibe-9a579.appspot.com',
+    iosClientId: '472313211101-o8d3rk5de6f0hlni66bjmfb39a1oapfm.apps.googleusercontent.com',
     iosBundleId: 'com.example.lab',
   );
 }
