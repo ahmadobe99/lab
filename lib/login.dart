@@ -19,7 +19,9 @@ class _LoginState extends State<Login> {
       appBar: AppBar(),
       body: Column(
         children: [
-   
+    SizedBox(
+            height: 50,
+          ),
           Container(
             width: 100,
             height: 100,
@@ -29,7 +31,7 @@ class _LoginState extends State<Login> {
                     image: NetworkImage(
                         "https://th.bing.com/th/id/R.25451f24890c79a2b1c14072db772092?rik=PDPUXaXfIhoBiQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_519216.png&ehk=l7iUf57tjbJkuRt6r94MTHds%2blm2Hn30JXj1x%2b%2fR%2b2Y%3d&risl=&pid=ImgRaw&r=0"))),
           ),
-          Divider(
+          SizedBox(
             height: 50,
           ),
           TextField(
@@ -40,7 +42,7 @@ class _LoginState extends State<Login> {
                   OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
             ),
           ),
-          Divider(
+          SizedBox(
             height: 20,
           ),
           TextField(
@@ -51,10 +53,10 @@ class _LoginState extends State<Login> {
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20))),
           ),
-          const Divider(
+          const SizedBox(
             height: 25,
           ),
-          TextButton(
+          ElevatedButton(
               onPressed: (() async {
                 try {
                   var authopject = FirebaseAuth.instance;
@@ -69,7 +71,7 @@ class _LoginState extends State<Login> {
                 }
               }),
               child: Text("Signup")),
-          TextButton(
+          ElevatedButton(
               onPressed: (() async {
                 try {
                   var authopject = FirebaseAuth.instance;

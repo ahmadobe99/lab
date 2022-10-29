@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,14 +22,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<User?>(
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return Home();
-        }
-        return Login();
-      },
-      stream: FirebaseAuth.instance.authStateChanges(),
-    );
+    return Login();
   }
 }
+// StreamBuilder<User?>(
+//       builder: (context, snapshot) {
+//         if (snapshot.hasData) {
+//           return Home();
+//         }
+//         return Login();
+//       },
+//       stream: FirebaseAuth.instance.authStateChanges(),
+//     );

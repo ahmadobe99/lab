@@ -2,8 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lab/login.dart';
+import 'package:lab/view.dart';
+
 final _firestore = FirebaseFirestore.instance;
-late User currentuser;
+User? currentUser;
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -14,16 +16,17 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final _auth = FirebaseAuth.instance;
+  @override
   void initState() {
-    super.initState();
     getCurrentUser();
+    super.initState();
   }
 
   void getCurrentUser() async {
     try {
       final user = await _auth.currentUser;
       if (user != null) {
-        currentuser = await user;
+        currentUser = await user;
       }
     } catch (e) {
       throw e;
@@ -31,18 +34,20 @@ class _HomeState extends State<Home> {
   }
 
   Color getcolor() {
-    if (currentuser.email.toString().contains("red"))
+    if (currentUser!.email.toString().contains("red"))
       return Colors.red;
-    else if (currentuser.email.toString().contains("yellwo"))
+    else if (currentUser!.email.toString().contains("yellwo"))
       return Colors.yellowAccent;
-    else if (currentuser.email.toString().contains("blue"))
+    else if (currentUser!.email.toString().contains("blue"))
       return Colors.blue;
-    else if (currentuser.email.toString().contains("green"))
+    else if (currentUser!.email.toString().contains("green"))
       return Colors.green;
     else
       return Colors.grey;
   }
 
+  String? type;
+  TextEditingController name = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +56,7 @@ class _HomeState extends State<Home> {
           IconButton(
               onPressed: () async {
                 await FirebaseAuth.instance.signOut();
+                Navigator.pop(context);
               },
               icon: Icon(Icons.logout_rounded))
         ],
@@ -63,19 +69,65 @@ class _HomeState extends State<Home> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Welcome ",
-                style: TextStyle(fontSize: 25),
+              RadioListTile(
+                title: Text(
+                  "Admin",
+                  style: TextStyle(fontSize: 24, color: Colors.black),
+                ),
+                activeColor: Colors.red,
+                tileColor: Colors.amber,
+                value: "admin",
+                groupValue: type,
+                onChanged: (value) {
+                  setState(() {
+                    type = value.toString();
+                  });
+                },
               ),
-              TextButton(
+              RadioListTile(
+                  activeColor: Colors.red,
+                  title: Text(
+                    "User",
+                    style: TextStyle(fontSize: 24, color: Colors.black),
+                  ),
+                  tileColor: Colors.amber,
+                  value: "user",
+                  groupValue: type,
+                  onChanged: (value) {
+                    setState(
+                      () {
+                        type = value.toString();
+                      },
+                    );
+                  }),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: TextField(
+                  controller: name,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Enter your Name',
+                      ),
+                ),
+              ),
+              ElevatedButton(
                   onPressed: (() {
+                    CollectionReference db =
+                        FirebaseFirestore.instance.collection("users");
+                    db.add({"type": type,
+                    "name":name.text,
+                    "thedateofcreation":DateTime.now()});
+
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return Login();
+                        return View_Screen();
                       },
                     ));
                   }),
-                  child: Text("Back"))
+                  child: Text("show details"))
             ],
           ),
         ),
