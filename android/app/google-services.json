@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "230453938887",
+    "project_id": "aghaobeidat-fa2b5",
+    "storage_bucket": "aghaobeidat-fa2b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230453938887:android:fa15c85c2d7f1abb904ce2",
+        "android_client_info": {
+          "package_name": "com.example.lab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230453938887-rg9s9m39r5iskl7r1ackutm4aolb9nh7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHr2PaVIBnFeQwABe_Hf_tLxpXRH0Caho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230453938887-rg9s9m39r5iskl7r1ackutm4aolb9nh7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
